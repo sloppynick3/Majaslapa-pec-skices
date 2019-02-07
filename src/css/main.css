@@ -38,7 +38,7 @@ body {
 }
 
 .topnav a:hover:not(#home) {
-  background-color: #63728b;
+  background-color: #970928;
 }
 
 @media screen and (max-width: 600px) {
