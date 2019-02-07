@@ -1,4 +1,78 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
 body {
-  background-color: blue;
+  background-color: #2B2D42;
+}
+
+.active {
+  background-color: #df0d3b;
+}
+
+.topnav {
+  overflow: hidden;
+  height: 80px;
+  background-color: #8D99AE;
+}
+
+.topnav .icon {
+  float: right;
+  display: none;
+}
+
+.topnav a {
+  float: left;
+  display: block;
+  text-transform: uppercase;
+  text-align: center;
+  color: #EDF2F4;
+  text-decoration: none;
+  font-size: 17px;
+  font-weight: bold;
+  line-height: 80px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.topnav a:hover:not(#home) {
+  background-color: #63728b;
+}
+
+@media screen and (max-width: 600px) {
+  .topnav a:not(:first-child) {
+    display: none;
+  }
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .topnav.responsive {
+    height: 100%;
+    position: relative;
+    display: block;
+  }
+  .topnav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+  }
+}
+
+#brand-logo {
+  width: 80px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 /*# sourceMappingURL=main.css.map */
