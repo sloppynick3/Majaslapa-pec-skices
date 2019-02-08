@@ -2,6 +2,8 @@
   margin: 0;
   padding: 0;
   font-family: 'Roboto', sans-serif;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 body {
@@ -14,6 +16,8 @@ body {
 
 .topnav {
   overflow: hidden;
+  position: fixed;
+  width: 100%;
   height: 80px;
   background-color: #8D99AE;
 }
@@ -39,6 +43,8 @@ body {
 
 .topnav a:hover:not(#home) {
   background-color: #970928;
+  -webkit-transition: 0.2s ease;
+  transition: 0.2s ease;
 }
 
 @media screen and (max-width: 600px) {
@@ -72,7 +78,111 @@ body {
 
 #brand-logo {
   width: 80px;
-  padding-left: 20px;
-  padding-right: 20px;
+}
+
+div.landingPage {
+  height: 100vh;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.7)), to(rgba(0, 0, 0, 0.7))), url(/assets/LandingpageBacground.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(/assets/LandingpageBacground.jpg);
+  background-position: center;
+  background-size: cover;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-size: 28px;
+  color: #EDF2F4;
+}
+
+div.landingPage h1,
+div.landingPage .button {
+  -webkit-animation: animate 1s 1;
+          animation: animate 1s 1;
+}
+
+@-webkit-keyframes animate {
+  0% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes animate {
+  0% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+.container {
+  padding: 64px;
+  margin: 20px;
+  background-color: #EDF2F4;
+}
+
+.button {
+  text-decoration: none;
+  padding: 10px 30px;
+  color: #EDF2F4;
+  border: 1px solid #EDF2F4;
+  margin-top: 30px;
+  -webkit-transition: 0.5s ease;
+  transition: 0.5s ease;
+}
+
+.button:hover {
+  background-color: #8D99AE;
+  color: #000;
+}
+
+/* Clear floats */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* 2/3 column */
+.column-66 {
+  float: left;
+  width: 66.66666%;
+  padding: 20px;
+}
+
+/* 1/3 column */
+.column-33 {
+  float: left;
+  width: 33.33333%;
+  padding: 20px;
+}
+
+/* Add responsiveness - make the columns appear on top of each other instead of next to each other on small screens */
+@media screen and (max-width: 1000px) {
+  .column-66,
+  .column-33 {
+    width: 100%;
+    text-align: center;
+  }
+  .container {
+    margin: 0px;
+    margin-top: 5px;
+  }
 }
 /*# sourceMappingURL=main.css.map */
