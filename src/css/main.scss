@@ -1,13 +1,8 @@
-$colors:(primary: #2B2D42,
-secondary: #8D99AE,
-light: #EDF2F4,
-lightblue: #40798C,
-teal: #70A9A1,
-active: #df0d3b);
-
+$colors:(primary: #2B2D42, secondary: #8D99AE, light: #EDF2F4, lightblue: #40798C, teal: #70A9A1, active: #df0d3b);
 $topnavHeight: 80px;
 $topnavPadding: 30px;
-$break-mobile: 600px;
+$footerHeight: 100px;
+$break-mobile: 700px;
 
 @function getColor ($color) {
     @return map-get($colors, $color);
@@ -22,9 +17,7 @@ $break-mobile: 600px;
 
 body {
     background-color: getColor(primary);
-
 }
-
 
 //-----------------------Navigation bar----------------------------------
 .active {
@@ -52,7 +45,6 @@ body {
         text-decoration: none;
         font-size: 17px;
         font-weight: bold;
-
         line-height: $topnavHeight;
         padding-left: $topnavPadding;
         padding-right: $topnavPadding;
@@ -61,11 +53,13 @@ body {
             background-color: darken($color: getColor(active), $amount: 15);
             transition: 0.2s ease;
         }
-
     }
 }
 
+
 @media screen and (max-width: $break-mobile) {
+
+
     .topnav a:not(:first-child) {
         display: none;
     }
@@ -74,15 +68,12 @@ body {
         float: right;
         display: block;
     }
-}
 
-@media screen and (max-width: $break-mobile) {
     .topnav.responsive {
-        height: 100%;
-
-        position: relative;
+        height: auto;
+        position: fixed;
         display: block;
-
+        overflow: auto;
     }
 
     .topnav.responsive .icon {
@@ -99,10 +90,8 @@ body {
     }
 }
 
-
 #brand-logo {
     width: $topnavHeight;
-
 }
 
 //---------------------Landing page---------------------------------
@@ -131,7 +120,6 @@ div.landingPage {
         100% {
             transform: scale(1);
         }
-
     }
 }
 
@@ -139,8 +127,23 @@ div.landingPage {
 //--------------------Landing page----------------------------------
 .container {
     padding: 64px;
+    padding-bottom: 32px;
     margin: 20px;
     background-color: getColor(light);
+    border-radius: 3px;
+
+
+    //On click enlarge image (TODO)
+    // img:active {
+    //     position: fixed;
+    //     top: 50%;
+    //     left: 50%;
+    //     max-width: 80%;
+    //     max-height: 80%;
+    //     /* bring your own prefixes */
+    //     transform: translate(-50%, -50%);
+    //     transition: 0.2s ease;
+    // }
 }
 
 .button {
@@ -159,6 +162,7 @@ div.landingPage {
 
 //-----------------------------Info--------------------------------
 /* Clear floats */
+
 .row:after {
     content: "";
     display: table;
@@ -166,6 +170,7 @@ div.landingPage {
 }
 
 /* 2/3 column */
+
 .column-66 {
     float: left;
     width: 66.66666%;
@@ -173,13 +178,24 @@ div.landingPage {
 }
 
 /* 1/3 column */
+
 .column-33 {
     float: left;
     width: 33.33333%;
     padding: 20px;
 }
 
+.column-66,
+.column-33 {
+    img {
+        width: 100%;
+        margin-top: 10px;
+        object-fit: contain;
+    }
+}
+
 /* Add responsiveness - make the columns appear on top of each other instead of next to each other on small screens */
+
 @media screen and (max-width: 1000px) {
 
     .column-66,
@@ -189,7 +205,69 @@ div.landingPage {
     }
 
     .container {
+        padding: 10px;
         margin: 0px;
         margin-top: 5px;
+        border-radius: 0px;
+    }
+}
+
+//------------------Footer------------------------------
+
+.map {
+    float: right;
+}
+
+footer {
+    padding: 10px;
+    overflow: hidden;
+    width: 100%;
+    height: auto;
+    background-color: getColor(secondary);
+    
+    div {
+        float: left;
+        height: 100%;
+        margin: 10px;
+
+        a {
+            display: block;
+            img {
+                size: 50px;
+            }
+        }
+
+    }
+
+    .socialMedia * img{
+        max-height: 64px;
+
+        margin: 5px;
+
+    }
+
+
+    a {
+        text-decoration: none;
+    }
+
+}
+
+@media screen and (max-width: $break-mobile) {
+
+    footer{
+        text-align: center;
+
+        div {
+            float: none;
+        }
+
+        .map {
+           display: none;
+        }
+
+        .socialMedia * {
+            display: inline;
+        }
     }
 }

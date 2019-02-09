@@ -5,9 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="Description" content="Test website">
     <title>Document</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.7.1/js/all.js" integrity="sha384-eVEQC9zshBn0rFj4+TU78eNA19HMNigMviK/PU/FFjLXqa/GKPgX58rvt5Z8PLs7"
+        crossorigin="anonymous"></script>
     <link rel="stylesheet" href="src/css/main.css">
 
     <script src="/src/js/main.js"></script>
@@ -15,37 +17,71 @@
 
 <body>
     <nav class="topnav" id="myTopnav">
-        <a href="#" id="home"><img id="brand-logo" src="/assets/Logo.png"></a>
-        <a class="active" href="#">HOME</a>
-        <a href="#">IMAGES</a>
-        <a href="javascript:void(0);" class="icon" onclick="responsiveNavbar()">
+        <a href="#" id="home" tabindex="0"><img id="brand-logo" src="/assets/Logo.png" alt="logo"></a>
+        <a class="active" href="#" tabindex="1">HOME</a>
+        <a href="#" tabindex="2">IMAGES</a>
+        <a href="javascript:void(0);" class="icon" onclick="responsiveNavbar()" aria-label="open selection menu">
             <i class="fa fa-bars"></i>
         </a>
     </nav>
-<div class="landingPage">
-    <h1>WELCOME!</h1>
-    <a href="#" class="button">ENTER</a>
-</div>
+    <!--Main content-->
+    <div class="landingPage">
+        <h1>WELCOME!</h1>
+        <a href="#" class="button">ENTER</a>
+    </div>
     <div class="container">
         <div class="row">
             <div class="column-66">
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quidem at molestiae a fugit velit vero eveniet temporibus in iure nostrum voluptatem maiores corrupti explicabo, deserunt iusto hic praesentium sapiente quisquam.</p>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quidem at molestiae a fugit velit vero
+                    eveniet temporibus in iure nostrum voluptatem maiores corrupti explicabo, deserunt iusto hic
+                    praesentium sapiente quisquam.</p>
             </div>
             <div class="column-33">
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Expedita voluptates eos nesciunt enim accusamus perspiciatis atque doloribus labore corporis sequi amet nihil, reiciendis laudantium. Libero ea sit laudantium nulla et?</p>
+
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Expedita voluptates eos nesciunt
+                    enim
+                    accusamus perspiciatis atque doloribus labore corporis sequi amet nihil, reiciendis
+                    laudantium.</p>
+                <img src="/assets/cliff-clouds-daylight-1659435.jpg" alt="inspiring image" style="max-height:300px;">
+
             </div>
         </div>
     </div>
     <div class="container">
-            <div class="row">
-                <div class="column-66">
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quidem at molestiae a fugit velit vero eveniet temporibus in iure nostrum voluptatem maiores corrupti explicabo, deserunt iusto hic praesentium sapiente quisquam.</p>
-                </div>
-                <div class="column-33">
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Expedita voluptates eos nesciunt enim accusamus perspiciatis atque doloribus labore corporis sequi amet nihil, reiciendis laudantium. Libero ea sit laudantium nulla et?</p>
-                </div>
+        <div class="row">
+            <div class="column-66">
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quidem at molestiae a fugit velit vero
+                    eveniet temporibus in iure nostrum voluptatem maiores corrupti explicabo, deserunt iusto hic
+                    praesentium sapiente quisquam.</p>
+            </div>
+            <div class="column-33">
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Expedita voluptates eos nesciunt enim
+                    accusamus perspiciatis atque doloribus labore corporis sequi amet nihil, reiciendis laudantium.
+                    Libero ea sit laudantium nulla et?</p>
             </div>
         </div>
+    </div>
+
+    <!--Footer-->
+
+    <footer>
+        <div>
+            <img src="/assets/LogoFooter.png" alt="Logo in footer" style="width:100%; height: auto;">
+            <p>aaaaaa@gmail.com</p>
+            <p>+37155555555</p>
+            <p>1072 Barfield Lane</p>
+        </div>
+        <div class="socialMedia">
+            <a href="https://www.twitter.com" ><img src="/assets/twitter.png" alt="twitter"></a>
+            <a href="https://www.facebook.com"><img src="/assets/facebook.png" alt="facebook"></a>
+            <a href="https://www.youtube.com" ><img src="/assets/youtube.png" alt="youtube"></a>
+        </div>
+
+        <div class="map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2513.7425149545916!2d24.1042652426633!3d56.95331436604184!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x96a8a0e931b27448!2sRiga+State+Technical+School!5e0!3m2!1sen!2slv!4v1549728230880"
+                width="200" height="200" frameborder="0" style="border:0" allowfullscreen></iframe>
+        </div>
+    </footer>
 </body>
 
 </html>

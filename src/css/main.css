@@ -47,7 +47,7 @@ body {
   transition: 0.2s ease;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 700px) {
   .topnav a:not(:first-child) {
     display: none;
   }
@@ -55,13 +55,11 @@ body {
     float: right;
     display: block;
   }
-}
-
-@media screen and (max-width: 600px) {
   .topnav.responsive {
-    height: 100%;
-    position: relative;
+    height: auto;
+    position: fixed;
     display: block;
+    overflow: auto;
   }
   .topnav.responsive .icon {
     position: absolute;
@@ -133,8 +131,10 @@ div.landingPage .button {
 
 .container {
   padding: 64px;
+  padding-bottom: 32px;
   margin: 20px;
   background-color: #EDF2F4;
+  border-radius: 3px;
 }
 
 .button {
@@ -173,6 +173,14 @@ div.landingPage .button {
   padding: 20px;
 }
 
+.column-66 img,
+.column-33 img {
+  width: 100%;
+  margin-top: 10px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
 /* Add responsiveness - make the columns appear on top of each other instead of next to each other on small screens */
 @media screen and (max-width: 1000px) {
   .column-66,
@@ -181,8 +189,60 @@ div.landingPage .button {
     text-align: center;
   }
   .container {
+    padding: 10px;
     margin: 0px;
     margin-top: 5px;
+    border-radius: 0px;
+  }
+}
+
+.map {
+  float: right;
+}
+
+footer {
+  padding: 10px;
+  overflow: hidden;
+  width: 100%;
+  height: auto;
+  background-color: #8D99AE;
+}
+
+footer div {
+  float: left;
+  height: 100%;
+  margin: 10px;
+}
+
+footer div a {
+  display: block;
+}
+
+footer div a img {
+  size: 50px;
+}
+
+footer .socialMedia * img {
+  max-height: 64px;
+  margin: 5px;
+}
+
+footer a {
+  text-decoration: none;
+}
+
+@media screen and (max-width: 700px) {
+  footer {
+    text-align: center;
+  }
+  footer div {
+    float: none;
+  }
+  footer .map {
+    display: none;
+  }
+  footer .socialMedia * {
+    display: inline;
   }
 }
 /*# sourceMappingURL=main.css.map */
