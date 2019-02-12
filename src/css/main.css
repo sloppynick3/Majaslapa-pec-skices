@@ -4,22 +4,23 @@
   font-family: 'Roboto', sans-serif;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  line-height: 30px;
 }
 
 body {
   background-color: #2B2D42;
 }
 
-.active {
-  background-color: #df0d3b;
-}
-
 .topnav {
   overflow: hidden;
-  position: fixed;
+  position: absolute;
   width: 100%;
   height: 80px;
-  background-color: #8D99AE;
+  background-color: transparent;
+}
+
+.topnav .active {
+  color: #f65c7e;
 }
 
 .topnav .icon {
@@ -32,7 +33,7 @@ body {
   display: block;
   text-transform: uppercase;
   text-align: center;
-  color: #EDF2F4;
+  color: #f5fdff;
   text-decoration: none;
   font-size: 17px;
   font-weight: bold;
@@ -42,12 +43,22 @@ body {
 }
 
 .topnav a:hover:not(#home) {
-  background-color: #970928;
+  color: #df0d3b;
   -webkit-transition: 0.2s ease;
   transition: 0.2s ease;
 }
 
 @media screen and (max-width: 700px) {
+  .topnav {
+    background-color: #32373f;
+  }
+  .topnav .active {
+    background-color: #df0d3b;
+    color: #f5fdff;
+  }
+  .topnav .active:hover {
+    background-color: #f5fdff;
+  }
   .topnav a:not(:first-child) {
     display: none;
   }
@@ -56,6 +67,7 @@ body {
     display: block;
   }
   .topnav.responsive {
+    background-color: #32373f;
     height: auto;
     position: fixed;
     display: block;
@@ -80,8 +92,8 @@ body {
 
 div.landingPage {
   height: 100vh;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.7)), to(rgba(0, 0, 0, 0.7))), url(/assets/LandingpageBacground.jpg);
-  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(/assets/LandingpageBacground.jpg);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.8)), to(rgba(0, 0, 0, 0.8))), url(/assets/LandingpageBacground.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(/assets/LandingpageBacground.jpg);
   background-position: center;
   background-size: cover;
   display: -webkit-box;
@@ -98,7 +110,7 @@ div.landingPage {
       -ms-flex-direction: column;
           flex-direction: column;
   font-size: 28px;
-  color: #EDF2F4;
+  color: #f5fdff;
 }
 
 div.landingPage h1,
@@ -129,30 +141,50 @@ div.landingPage .button {
   }
 }
 
+div.landingPage div {
+  font-size: 20px;
+  position: absolute;
+  bottom: 0;
+  left: 1;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
 .container {
-  padding: 64px;
-  padding-bottom: 32px;
-  margin: 20px;
-  background-color: #EDF2F4;
+  padding: 32px 10px 10px 10px;
+  margin: 0px;
+  margin: 10px 0px 10px;
+  background-color: #f5fdff;
   border-radius: 3px;
 }
 
 .button {
   text-decoration: none;
   padding: 10px 30px;
-  color: #EDF2F4;
-  border: 1px solid #EDF2F4;
+  color: #f5fdff;
+  border: 1px solid #f5fdff;
   margin-top: 30px;
   -webkit-transition: 0.5s ease;
   transition: 0.5s ease;
 }
 
 .button:hover {
-  background-color: #8D99AE;
+  background-color: #32373f;
   color: #000;
 }
 
 /* Clear floats */
+.container h1 {
+  font-size: 50px;
+  text-align: center;
+}
+
+.row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 .row:after {
   content: "";
   display: table;
@@ -163,14 +195,33 @@ div.landingPage .button {
 .column-66 {
   float: left;
   width: 66.66666%;
-  padding: 20px;
+  padding: 40px;
+  max-width: 1000px;
+  color: #232323;
+  font-size: 18px;
+  line-height: 1.6em;
+  font-weight: 400;
 }
 
 /* 1/3 column */
 .column-33 {
-  float: left;
   width: 33.33333%;
-  padding: 20px;
+  padding: 10px;
+  margin-left: auto;
+}
+
+.column-66,
+.column-33 {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  text-align: center;
+}
+
+.column-66 h2,
+.column-33 h2 {
+  margin: 30px;
+  letter-spacing: 2px;
 }
 
 .column-66 img,
@@ -183,21 +234,26 @@ div.landingPage .button {
 
 /* Add responsiveness - make the columns appear on top of each other instead of next to each other on small screens */
 @media screen and (max-width: 1000px) {
+  .row {
+    display: inline;
+  }
   .column-66,
   .column-33 {
+    padding: 5px;
     width: 100%;
     text-align: center;
   }
   .container {
     padding: 10px;
-    margin: 0px;
     margin-top: 5px;
     border-radius: 0px;
   }
 }
 
-.map {
+.google-maps {
   float: right;
+  max-width: 30%;
+  overflow: auto;
 }
 
 footer {
@@ -205,7 +261,8 @@ footer {
   overflow: hidden;
   width: 100%;
   height: auto;
-  background-color: #8D99AE;
+  background-color: #32373f;
+  color: #f5fdff;
 }
 
 footer div {
@@ -238,7 +295,7 @@ footer a {
   footer div {
     float: none;
   }
-  footer .map {
+  footer .google-maps {
     display: none;
   }
   footer .socialMedia * {

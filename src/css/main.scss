@@ -1,9 +1,8 @@
-$colors:(primary: #2B2D42, secondary: #8D99AE, light: #EDF2F4, lightblue: #40798C, teal: #70A9A1, active: #df0d3b);
+$colors:(primary: #2B2D42, secondary: rgb(50, 55, 63), light: rgb(245, 253, 255), lightblue: #40798C, teal: #70A9A1, active: #df0d3b);
 $topnavHeight: 80px;
 $topnavPadding: 30px;
 $footerHeight: 100px;
 $break-mobile: 700px;
-
 @function getColor ($color) {
     @return map-get($colors, $color);
 }
@@ -13,6 +12,7 @@ $break-mobile: 700px;
     padding: 0;
     font-family: 'Roboto', sans-serif;
     box-sizing: border-box;
+    line-height: 30px;
 }
 
 body {
@@ -20,22 +20,20 @@ body {
 }
 
 //-----------------------Navigation bar----------------------------------
-.active {
-    background-color: getColor(active);
-}
-
 .topnav {
     overflow: hidden;
-    position: fixed;
+    position: absolute;
     width: 100%;
-    height: $topnavHeight;
-    background-color: getColor(secondary);
-
+    height: $topnavHeight; // background-color: getColor(secondary);
+    background-color: transparent;
+    .active {
+        //background-color: getColor(active);
+        color: lighten(getColor(active), 20%);
+    }
     .icon {
         float: right;
         display: none;
     }
-
     a {
         float: left;
         display: block;
@@ -48,40 +46,43 @@ body {
         line-height: $topnavHeight;
         padding-left: $topnavPadding;
         padding-right: $topnavPadding;
-
         &:hover:not(#home) {
-            background-color: darken($color: getColor(active), $amount: 15);
+            color: getColor(active);
             transition: 0.2s ease;
         }
     }
 }
 
-
 @media screen and (max-width: $break-mobile) {
-
-
+    .topnav {
+        background-color: getColor(secondary);
+        .active {
+            background-color: getColor(active);
+            color: getColor(light);
+            &:hover {
+                background-color: getColor(light);
+            }
+        }
+    }
     .topnav a:not(:first-child) {
         display: none;
     }
-
     .topnav a.icon {
         float: right;
         display: block;
     }
-
     .topnav.responsive {
+        background-color: getColor(secondary);
         height: auto;
         position: fixed;
         display: block;
         overflow: auto;
     }
-
     .topnav.responsive .icon {
         position: absolute;
         right: 0;
         top: 0;
     }
-
     .topnav.responsive a {
         float: none;
         display: block;
@@ -97,7 +98,7 @@ body {
 //---------------------Landing page---------------------------------
 div.landingPage {
     height: 100vh;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(/assets/LandingpageBacground.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(/assets/LandingpageBacground.jpg);
     background-position: center;
     background-size: cover;
     display: flex;
@@ -106,34 +107,36 @@ div.landingPage {
     flex-direction: column;
     font-size: 28px;
     color: getColor(light);
-
     h1,
     .button {
         animation: animate 1s 1;
     }
-
     @keyframes animate {
         0% {
             transform: scale(0);
         }
-
         100% {
             transform: scale(1);
         }
+    }
+    div {
+        font-size: 20px;
+        position: absolute;
+        bottom: 0;
+        left: 1;
+        margin-bottom: 25px;
+        text-align: center;
     }
 }
 
 //---------------------Main content---------------------------------
 //--------------------Landing page----------------------------------
 .container {
-    padding: 64px;
-    padding-bottom: 32px;
-    margin: 20px;
+    padding: 32px 10px 10px 10px;
+    margin: 0px;
+    margin: 10px 0px 10px;
     background-color: getColor(light);
-    border-radius: 3px;
-
-
-    //On click enlarge image (TODO)
+    border-radius: 3px; //On click enlarge image (TODO)
     // img:active {
     //     position: fixed;
     //     top: 50%;
@@ -153,7 +156,6 @@ div.landingPage {
     border: 1px solid getColor(light);
     margin-top: 30px;
     transition: 0.5s ease;
-
     &:hover {
         background-color: getColor(secondary);
         color: #000;
@@ -162,6 +164,15 @@ div.landingPage {
 
 //-----------------------------Info--------------------------------
 /* Clear floats */
+
+.container h1 {
+    font-size: 50px;
+    text-align: center;
+}
+
+.row {
+    display: flex;
+}
 
 .row:after {
     content: "";
@@ -174,19 +185,30 @@ div.landingPage {
 .column-66 {
     float: left;
     width: 66.66666%;
-    padding: 20px;
+    padding: 40px;
+    max-width: 1000px;
+    color: #232323;
+    font-size: 18px;
+    line-height: 1.6em;
+    font-weight: 400;
 }
 
 /* 1/3 column */
 
 .column-33 {
-    float: left;
     width: 33.33333%;
-    padding: 20px;
+    padding: 10px;
+    margin-left: auto;
 }
 
 .column-66,
 .column-33 {
+    align-self: center;
+    text-align: center;
+    h2 {
+        margin: 30px;
+        letter-spacing: 2px;
+    }
     img {
         width: 100%;
         margin-top: 10px;
@@ -197,25 +219,27 @@ div.landingPage {
 /* Add responsiveness - make the columns appear on top of each other instead of next to each other on small screens */
 
 @media screen and (max-width: 1000px) {
-
+    .row {
+        display: inline;
+    }
     .column-66,
     .column-33 {
+        padding: 5px;
         width: 100%;
         text-align: center;
     }
-
     .container {
         padding: 10px;
-        margin: 0px;
         margin-top: 5px;
         border-radius: 0px;
     }
 }
 
 //------------------Footer------------------------------
-
-.map {
+.google-maps {
     float: right;
+    max-width: 30%;
+    overflow: auto;
 }
 
 footer {
@@ -224,48 +248,36 @@ footer {
     width: 100%;
     height: auto;
     background-color: getColor(secondary);
-    
+    color: getColor(light);
     div {
         float: left;
         height: 100%;
         margin: 10px;
-
         a {
             display: block;
             img {
                 size: 50px;
             }
         }
-
     }
-
-    .socialMedia * img{
+    .socialMedia * img {
         max-height: 64px;
-
         margin: 5px;
-
     }
-
-
     a {
         text-decoration: none;
     }
-
 }
 
 @media screen and (max-width: $break-mobile) {
-
-    footer{
+    footer {
         text-align: center;
-
         div {
             float: none;
         }
-
-        .map {
-           display: none;
+        .google-maps {
+            display: none;
         }
-
         .socialMedia * {
             display: inline;
         }
