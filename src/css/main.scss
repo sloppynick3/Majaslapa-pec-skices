@@ -54,6 +54,9 @@ body {
 }
 
 @media screen and (max-width: $break-mobile) {
+    .icon :hover {
+        color:getColor(light);
+    }
     .topnav {
         background-color: getColor(secondary);
         .active {
@@ -98,7 +101,7 @@ body {
 //---------------------Landing page---------------------------------
 div.landingPage {
     height: 100vh;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(/assets/LandingpageBacground.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(../../assets/LandingpageBacground.jpg);
     background-position: center;
     background-size: cover;
     display: flex;
@@ -136,17 +139,7 @@ div.landingPage {
     margin: 0px;
     margin: 10px 0px 10px;
     background-color: getColor(light);
-    border-radius: 3px; //On click enlarge image (TODO)
-    // img:active {
-    //     position: fixed;
-    //     top: 50%;
-    //     left: 50%;
-    //     max-width: 80%;
-    //     max-height: 80%;
-    //     /* bring your own prefixes */
-    //     transform: translate(-50%, -50%);
-    //     transition: 0.2s ease;
-    // }
+    border-radius: 3px;
 }
 
 .button {
@@ -239,7 +232,7 @@ div.landingPage {
 .google-maps {
     float: right;
     max-width: 30%;
-    overflow: auto;
+    overflow: hidden;
 }
 
 footer {
@@ -283,3 +276,5 @@ footer {
         }
     }
 }
+
+//---------------Main page------------------------
