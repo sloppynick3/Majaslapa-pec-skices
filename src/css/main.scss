@@ -3,6 +3,7 @@ $topnavHeight: 80px;
 $topnavPadding: 30px;
 $footerHeight: 100px;
 $break-mobile: 700px;
+
 @function getColor ($color) {
     @return map-get($colors, $color);
 }
@@ -26,14 +27,17 @@ body {
     width: 100%;
     height: $topnavHeight; // background-color: getColor(secondary);
     background-color: transparent;
+
     .active {
         //background-color: getColor(active);
         color: lighten(getColor(active), 20%);
     }
+
     .icon {
         float: right;
         display: none;
     }
+
     a {
         float: left;
         display: block;
@@ -46,6 +50,7 @@ body {
         line-height: $topnavHeight;
         padding-left: $topnavPadding;
         padding-right: $topnavPadding;
+
         &:hover:not(#home) {
             color: getColor(active);
             transition: 0.2s ease;
@@ -55,25 +60,31 @@ body {
 
 @media screen and (max-width: $break-mobile) {
     .icon :hover {
-        color:getColor(light);
+        color: getColor(light);
     }
+
     .topnav {
         background-color: getColor(secondary);
+
         .active {
             background-color: getColor(active);
             color: getColor(light);
+
             &:hover {
                 background-color: getColor(light);
             }
         }
     }
+
     .topnav a:not(:first-child) {
         display: none;
     }
+
     .topnav a.icon {
         float: right;
         display: block;
     }
+
     .topnav.responsive {
         background-color: getColor(secondary);
         height: auto;
@@ -81,11 +92,13 @@ body {
         display: block;
         overflow: auto;
     }
+
     .topnav.responsive .icon {
         position: absolute;
         right: 0;
         top: 0;
     }
+
     .topnav.responsive a {
         float: none;
         display: block;
@@ -110,18 +123,22 @@ div.landingPage {
     flex-direction: column;
     font-size: 28px;
     color: getColor(light);
+
     h1,
     .button {
         animation: animate 1s 1;
     }
+
     @keyframes animate {
         0% {
             transform: scale(0);
         }
+
         100% {
             transform: scale(1);
         }
     }
+
     div {
         font-size: 20px;
         position: absolute;
@@ -149,6 +166,7 @@ div.landingPage {
     border: 1px solid getColor(light);
     margin-top: 30px;
     transition: 0.5s ease;
+
     &:hover {
         background-color: getColor(secondary);
         color: #000;
@@ -198,10 +216,12 @@ div.landingPage {
 .column-33 {
     align-self: center;
     text-align: center;
+
     h2 {
         margin: 30px;
         letter-spacing: 2px;
     }
+
     img {
         width: 100%;
         margin-top: 10px;
@@ -215,12 +235,14 @@ div.landingPage {
     .row {
         display: inline;
     }
+
     .column-66,
     .column-33 {
         padding: 5px;
         width: 100%;
         text-align: center;
     }
+
     .container {
         padding: 10px;
         margin-top: 5px;
@@ -242,21 +264,26 @@ footer {
     height: auto;
     background-color: getColor(secondary);
     color: getColor(light);
+
     div {
         float: left;
         height: 100%;
         margin: 10px;
+
         a {
             display: block;
+
             img {
                 size: 50px;
             }
         }
     }
+
     .socialMedia * img {
         max-height: 64px;
         margin: 5px;
     }
+
     a {
         text-decoration: none;
     }
@@ -265,12 +292,15 @@ footer {
 @media screen and (max-width: $break-mobile) {
     footer {
         text-align: center;
+
         div {
             float: none;
         }
+
         .google-maps {
             display: none;
         }
+
         .socialMedia * {
             display: inline;
         }
@@ -278,3 +308,41 @@ footer {
 }
 
 //---------------Main page------------------------
+
+
+// ---------------Projects page -------------------
+.container *:not(publishDate) {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+.container{
+    width: 50vh;
+    margin: 20px;
+    border-radius: 10px;
+    display: block;
+    .projectImg {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    h1 {
+        margin-top: 30px;
+        margin-bottom: 15px;
+    }
+    p {
+        margin-top:10px;
+        margin-bottom: 10px;
+    }
+    button {
+        color:white;
+        background-color: red;
+        border:none;
+        width: 150px;
+        height: 50px;
+        border-radius: 10px;
+        &:hover {
+            box-shadow: 5px 5px 10px darken($color: red, $amount: 50%);
+        }
+    }
+}
