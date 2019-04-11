@@ -8,6 +8,7 @@ $break-mobile: 700px;
     @return map-get($colors, $color);
 }
 
+
 * {
     margin: 0;
     padding: 0;
@@ -16,7 +17,10 @@ $break-mobile: 700px;
     line-height: 30px;
 }
 
-body {
+html,body {
+    min-height: 100%;
+    min-width: 100%;
+
     background-color: getColor(primary);
 }
 
@@ -311,38 +315,69 @@ footer {
 
 
 // ---------------Projects page -------------------
-.container *:not(publishDate) {
+.containerInfo *:not(.publishDate):not(p) {
     display: block;
     margin-left: auto;
     margin-right: auto;
-
+    text-align: center;
 }
-.container{
-    width: 50vh;
+
+.containerInfo {
+    background-color: getColor(light);
+    width: 22%;
     margin: 20px;
     border-radius: 10px;
-    display: block;
+    display: inline-block;
+
     .projectImg {
         margin-top: 10px;
         margin-bottom: 10px;
+        overflow: auto;
+        max-width: 80%;
     }
+
+    .publishDate {
+        margin-left: 10px;
+        text-align: left;
+    }
+
     h1 {
         margin-top: 30px;
         margin-bottom: 15px;
     }
-    p {
-        margin-top:10px;
-        margin-bottom: 10px;
+
+    p:not(.publishDate) {
+        margin: 10px;
+        text-align: center;
     }
+
     button {
-        color:white;
+        color: white;
         background-color: red;
-        border:none;
+        border: none;
         width: 150px;
         height: 50px;
         border-radius: 10px;
+
         &:hover {
             box-shadow: 5px 5px 10px darken($color: red, $amount: 50%);
         }
     }
 }
+
+@media screen and (max-width: 850px) {
+    .containerInfo {
+        width: 40%;
+    }
+}
+
+@media screen and (max-width: $break-mobile) {
+    .containerInfo {
+        width: 90%;
+    }
+}
+
+.wrapper {
+    text-align: center;
+}
+
