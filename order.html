@@ -16,7 +16,7 @@
     <script src="./src/js/main.js"></script>
 </head>
 
-<body>
+<body onresize="checkSize()">
     <nav class="topnav" id="myTopnav" style="position:static">
         <a href="index.html" id="home" tabindex="0"><img id="brand-logo" src="./assets/Logo.png" alt="logo"></a>
         <a href="./index.html" tabindex="1">HOME</a>
@@ -29,13 +29,13 @@
 
 
     <div class="mobileOrderMenu wrapper">
-        <div id="smallOrderSelector" onclick="changeOrder(1)">
+        <div id="smallOrderSelector" onclick="setOrders(1)">
             <h1>$</h1>
         </div>
-        <div class="activeMobileOrderMenu" id="mediumOrderSelector" onclick="changeOrder(2)">
+        <div class="activeMobileOrderMenu" id="mediumOrderSelector" onclick="setOrders(2)">
             <h1>$$</h1>
         </div>
-        <div id="largeOrderSelector" onclick="changeOrder(3)">
+        <div id="largeOrderSelector" onclick="setOrders(3)">
             <h1>$$$</h1>
         </div>
     </div>
