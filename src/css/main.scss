@@ -360,7 +360,8 @@ footer {
         border-radius: 10px;
 
         &:hover {
-            box-shadow: 5px 5px 10px darken($color: red, $amount: 50%);
+            box-shadow: 10px 10px 10px darken($color: red, $amount: 40%);
+            transition: 0.2s ease;
         }
     }
 }
@@ -380,4 +381,56 @@ footer {
 .wrapper {
     text-align: center;
 }
+
+//------------Order page-----------------
+.mobileOrderMenu *{
+    display: none;
+    min-width: 32% !important;
+    height: 10vh;
+    text-align: center;
+    line-height: 10vh;
+    margin: -2px;
+
+}
+@media screen and (max-width: 850px) {
+    .mobileOrderMenu * {
+        display: inline-block;
+    }
+    .containerInfo#smallOrder, .containerInfo#largeOrder {
+        display: none;
+    }
+    .containerInfo#smallOrder,.containerInfo#mediumOrder,.containerInfo#largeOrder {
+        width: 80%;
+    }
+}
+#orderMain {
+    background-image: url("../../assets/Order\ bacground.jpg");
+    background-position: center;
+    background-size: cover;
+    height: 82vh;
+}
+
+#smallOrder,#smallOrderSelector {
+    background-color: rgb(0, 207, 152);
+    min-width: 25%;
+}
+#mediumOrder,#mediumOrderSelector {
+    background-color:rgb(51, 102, 255);
+    min-width: 25%;
+}
+#largeOrder,#largeOrderSelector {
+    background-color:red;
+    min-width: 25%;
+}
+
+.activeMobileOrderMenu {
+    box-shadow: 11px 10px 5px 0px rgba(0,0,0,0.32);
+    position: relative;
+    left: -5px;
+    top: -5px;
+}
+
+
+
+
 

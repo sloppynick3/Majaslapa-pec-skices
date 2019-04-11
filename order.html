@@ -19,8 +19,8 @@
 <body>
     <nav class="topnav" id="myTopnav" style="position:static">
         <a href="index.html" id="home" tabindex="0"><img id="brand-logo" src="./assets/Logo.png" alt="logo"></a>
-        <a class="active" href="./index.html" tabindex="1">HOME</a>
-        <a href="./order.html" tabindex="2">ORDER</a>
+        <a href="./index.html" tabindex="1">HOME</a>
+        <a class="active" href="./order.html" tabindex="2">ORDER</a>
         <a href="./projects.html" tabindex="3">PROJECTS</a>
         <a href="javascript:void(0);" class="icon" onclick="responsiveNavbar()" aria-label="open selection menu">
             <i class="fa fa-bars"></i>
@@ -28,6 +28,31 @@
     </nav>
 
 
+    <div class="mobileOrderMenu wrapper">
+        <div id="smallOrderSelector" onclick="changeOrder(1)">
+            <h1>$</h1>
+        </div>
+        <div class="activeMobileOrderMenu" id="mediumOrderSelector" onclick="changeOrder(2)">
+            <h1>$$</h1>
+        </div>
+        <div id="largeOrderSelector" onclick="changeOrder(3)">
+            <h1>$$$</h1>
+        </div>
+    </div>
+    <!-- Main content -->
+    <div class="wrapper">
+        <div id="orderMain">
+            <div class="containerInfo" id="smallOrder">
+                <h1 class="priceTag">$</h1>
+            </div>
+            <div class="containerInfo" id="mediumOrder">
+                <h1 class="priceTag">$$</h1>
+            </div>
+            <div class="containerInfo" id="largeOrder">
+                <h1 class="priceTag">$$$</h1>
+            </div>
+        </div>
+    </div>
 
     <!--Footer-->
 

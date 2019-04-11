@@ -355,8 +355,10 @@ footer a {
 }
 
 .containerInfo button:hover {
-  -webkit-box-shadow: 5px 5px 10px black;
-          box-shadow: 5px 5px 10px black;
+  -webkit-box-shadow: 10px 10px 10px #330000;
+          box-shadow: 10px 10px 10px #330000;
+  -webkit-transition: 0.2s ease;
+  transition: 0.2s ease;
 }
 
 @media screen and (max-width: 850px) {
@@ -373,5 +375,56 @@ footer a {
 
 .wrapper {
   text-align: center;
+}
+
+.mobileOrderMenu * {
+  display: none;
+  min-width: 32% !important;
+  height: 10vh;
+  text-align: center;
+  line-height: 10vh;
+  margin: -2px;
+}
+
+@media screen and (max-width: 850px) {
+  .mobileOrderMenu * {
+    display: inline-block;
+  }
+  .containerInfo#smallOrder, .containerInfo#largeOrder {
+    display: none;
+  }
+  .containerInfo#smallOrder, .containerInfo#mediumOrder, .containerInfo#largeOrder {
+    width: 80%;
+  }
+}
+
+#orderMain {
+  background-image: url("../../assets/Order bacground.jpg");
+  background-position: center;
+  background-size: cover;
+  height: 82vh;
+}
+
+#smallOrder, #smallOrderSelector {
+  background-color: #00cf98;
+  min-width: 25%;
+}
+
+#mediumOrder, #mediumOrderSelector {
+  background-color: #3366ff;
+  min-width: 25%;
+}
+
+#largeOrder, #largeOrderSelector {
+  background-color: red;
+  min-width: 25%;
+}
+
+.activeMobileOrderMenu {
+  -webkit-box-shadow: 11px 10px 5px 0px rgba(0, 0, 0, 0.32);
+          box-shadow: 11px 10px 5px 0px rgba(0, 0, 0, 0.32);
+  position: relative;
+  left: -5px;
+  top: -5px;
 }
 /*# sourceMappingURL=main.css.map */
