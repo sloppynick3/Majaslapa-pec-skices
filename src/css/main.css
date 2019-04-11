@@ -427,4 +427,50 @@ footer a {
   left: -5px;
   top: -5px;
 }
+
+#linkWrap {
+  display: block;
+}
+
+#linkWrap a {
+  color: white;
+}
+
+.containerInfo p {
+  font-size: 20px;
+  min-height: 150px;
+}
+
+@media screen and (min-width: 1230px) {
+  .containerInfo p {
+    min-height: 100px;
+  }
+}
+
+.centerInImage {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.containerImage {
+  position: relative;
+  text-align: center;
+  font-size: 400%;
+  font-weight: bold;
+  color: black;
+  -webkit-text-stroke: 1px white;
+}
+
+.containerImage img {
+  max-width: 80%;
+}
+
+.buyNowButton {
+  margin: 20px;
+  background-color: white !important;
+  color: black !important;
+}
 /*# sourceMappingURL=main.css.map */

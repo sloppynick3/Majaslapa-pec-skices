@@ -323,6 +323,7 @@ footer {
 }
 
 .containerInfo {
+    
     background-color: getColor(light);
     width: 22%;
     margin: 20px;
@@ -430,6 +431,46 @@ footer {
     left: -5px;
     top: -5px;
 }
+#linkWrap {
+    display: block;
+    a {
+        color: white;
+    }
+}
+.containerInfo p {
+    font-size: 20px;
+    min-height: 150px;
+    @media screen and (min-width: 1230px){
+        min-height: 100px;
+    }
+}
+
+.centerInImage {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.containerImage {
+    position: relative;
+    text-align: center;
+    font-size: 400%;
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+    -webkit-text-stroke: 1px white;
+    img {
+        max-width: 80%;
+    }
+}
+
+.buyNowButton {
+    margin: 20px;
+    background-color:white !important;
+    color: black !important; 
+}
+
+
 
 
 
