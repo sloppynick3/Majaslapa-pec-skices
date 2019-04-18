@@ -2,6 +2,7 @@
 
 Majaslapa tika izveidota pēc paša veidotas skices priekš uzdevuma tehnikumā.
 
+Lapa: https://sloppynick3.github.io/Majaslapa-pec-skices/
 Skice: https://drive.google.com/file/d/1vwQLPsloqLCUIJjzPWwdaELzNa70RA2B/view?usp=sharing
 
 Mājaslapai būs divas versijas:  
